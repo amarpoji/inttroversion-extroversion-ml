@@ -21,7 +21,7 @@ class DataIngestion:
 
         try:
             # Read dataset from your local `data` folder
-            df = pd.read_csv(os.path.join("data", "introvert_extrovert.csv"))
+            df = pd.read_csv(os.path.join("data", "personality_dataset.csv"))
             logging.info("Dataset successfully loaded as DataFrame")
 
             os.makedirs(os.path.dirname(self.config.raw_data_path), exist_ok=True)
@@ -35,7 +35,7 @@ class DataIngestion:
 
             logging.info("Train-test split done and saved in artifacts folder")
 
-            return self.config.train_data_path, self.config.test_data_path
+            return self.config.train_data_path, self.config.test_data_path, self.config.raw_data_path
 
         except Exception as e:
             logging.error("Exception occurred during data ingestion")
