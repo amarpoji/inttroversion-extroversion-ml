@@ -8,4 +8,5 @@ xgboost
 dill
 flask
 missingno
+lazypredict
 # -e .
