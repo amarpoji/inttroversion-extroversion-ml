@@ -9,6 +9,7 @@ from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.impute import SimpleImputer
 from sklearn.model_selection import train_test_split
 import joblib
+from sklearn.preprocessing import LabelEncoder
 
 from src.logger import logging
 from src.exception import CustomException
@@ -17,6 +18,8 @@ from src.utils import save_object
 @dataclass
 class DataTransformationConfig:
     preprocessor_obj_file_path = os.path.join("artifacts", "preprocessor.pkl")
+    label_encoder_path = os.path.join("artifacts", "label_encoder.pkl")
+    
 
 class DataTransformation:
     def __init__(self):
@@ -80,6 +83,10 @@ class DataTransformation:
             input_features_test = test_df.drop(columns=[target_column], axis=1)
             target_feature_test = test_df[target_column]
 
+            label_encoder = LabelEncoder()
+            target_feature_train = label_encoder.fit_transform(target_feature_train)
+            target_feature_test = label_encoder.transform(target_feature_test)
+
             preprocessor = self.get_data_transformer_object()
 
             logging.info("Fitting and transforming data...")
@@ -92,6 +99,9 @@ class DataTransformation:
                 file_path=self.config.preprocessor_obj_file_path,
                 obj=preprocessor
             )
+            save_object(file_path= self.config.label_encoder_path,
+                        obj= label_encoder)
+
 
             return X_train, X_test, target_feature_train, target_feature_test
 
