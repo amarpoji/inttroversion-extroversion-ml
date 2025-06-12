@@ -41,7 +41,7 @@ It uses a trained classification model wrapped with a Flask interface for easy i
 ---
 
 ## 📁 Project Structure
-
+``` bash
 inttroversion-extroversion-ml/
 │
 ├── artifacts/ # Serialized model, preprocessor, label encoder
@@ -57,7 +57,7 @@ inttroversion-extroversion-ml/
 ├── requirements.txt # Python dependencies
 └── README.md # Project documentation
 
-
+```
 ---
 
 ## 🧪 How to Use
@@ -67,7 +67,7 @@ inttroversion-extroversion-ml/
 
 
 ```bash
-### 1. Clone the Repository
+1. Clone the Repository
 git clone https://github.com/your-username/introvert-extrovert-ml.git
 cd introvert-extrovert-ml
 
@@ -77,20 +77,20 @@ source venv/bin/activate   # Linux/Mac
 venv\Scripts\activate      # Windows
 
 
-### 2. Create & Activate Virtual Environment
+2. Create & Activate Virtual Environment
 python -m venv venv
 # Windows
 venv\Scripts\activate
 # macOS/Linux
 source venv/bin/activate
 
-### 3. Install Dependencies
+3. Install Dependencies
 pip install -r requirements.txt
 
-### 4. Train the model(optional)
+4. Train the model(optional)
 python main.py
 
-### 5. Run the flask app 
+5. Run the flask app 
 python app.py
 Open your browser and go to http://localhost:5000
 
