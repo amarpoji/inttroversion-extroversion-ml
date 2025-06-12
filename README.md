@@ -97,9 +97,9 @@ Open your browser and go to http://localhost:5000
 
 ```
 
-🙏 Acknowledgements
-Krish Naik – End to End machine learning tutorial
+## 🙏 Acknowledgements
+**Krish Naik** – End to End machine learning tutorial
 
-The Scikit-learn team for excellent documentation
+**The Scikit-learn** team for excellent documentation
 
-The Python and Flask communities
+**The Python** and **Flask** communities
