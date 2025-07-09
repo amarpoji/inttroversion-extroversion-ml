@@ -4,6 +4,7 @@ from src.component.data_transformation import DataTransformation
 from src.component.model_trainer import ModelTrainer
 
 
+
 if __name__ == "__main__":
     # ingestion = DataIngestion()
     # train_path, test_path = ingestion.initiate_data_ingestion()

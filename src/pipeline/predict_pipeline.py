@@ -6,6 +6,7 @@ import dill
 
 from src.exception import CustomException
 from src.utils import load_object # We'll create this if needed
+from src.logger import logging
 
 
 class PredictPipeline:
